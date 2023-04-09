@@ -1,10 +1,14 @@
 import "./styles.css";
 
+function mensagem() {
+  alert("Hello world");
+};
+
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Exercício 1: Hello World</h1>
+      <Botao />      
     </div>
   );
 }
