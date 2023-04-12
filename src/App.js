@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./styles.css";
 import Botao1 from "./Componentes/Botao1/Botao1";
-import AdicionarFilme from './Componentes/Ex4/AdicionarFilme'
-import Formulario from './Componentes/Ex4/Formulario';
+import Form1 from "./Componentes/Ex4/Form1";
+import Form2 from "./Componentes/Ex4/Form2";
+import Form3 from "./Componentes/Ex5/Form3";
 
 export default function App() {
   function mensagem() {
@@ -19,32 +20,40 @@ export default function App() {
   function aumentandoNumero() {
     setNumero(numero + 1);
   }
-  
-  const [ListaFilmes, setListaFilmes = useState([
-    {
-      nome: AAA,
-      ano: 1990,
-      prateleira: C 
-      },
-      {
-        nome: CCC,
-        ano: 2001,
-        prateleira: A
-      }
-  ])
-  
-  function adicionando {
-    setListaFilmes([...ListaFilmes && ListaFilmes])
+
+  {
+    /* Definitions for Ex4 */
+  }
+
+  const [value, setValue] = useState("");
+
+  function handleChange() {
+    setValue(event.target.value);
   }
 
   return (
     <>
-    <div>
-      <h1>Ex4 - Lista de filmes e botão para adicionar novos<h1>
-      <Formulario />
-      <AdicionarFilme adicionar={adicionando}/>
-        
-    </div>
+      <div>
+        <h1>Ex5 - Film form</h1>
+        <Form3 />
+        {/* <Button2 />
+        <FilmList /> */}
+      </div>
+      <div>
+        <h1>
+          Ex4.2 - Aplicação do useState e event.targe.value no componente pai
+        </h1>
+        <Form2 whenChanged={handleChange} value={value} />
+        <p>You typed: {value} </p>
+      </div>
+      <div>
+        <h1>
+          Ex4.1 - Aplicação do useState e event.targe.value no componente de
+          entrada (filho)
+        </h1>
+        <Form1 />
+      </div>
+
       <div>
         <h1>Ex3 - Contador Simples</h1>
         <h4>Você clicou {numero} vezes.</h4>
@@ -59,7 +68,7 @@ export default function App() {
       {/* Lembrete que é assim que comenta em React */}
 
       <div>
-        <h1>Exercício 1: Hello World</h1>
+        <h1>Ex1: Hello World</h1>
         <Botao1 onClick={mensagem} />
       </div>
     </>
